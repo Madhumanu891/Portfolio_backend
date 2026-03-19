@@ -18,7 +18,7 @@ const limiter = rateLimit({
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
-    ? ['https://your-portfolio-domain.com']
+    ? [process.env.FRONTEND_URL]
     : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true
 }));
