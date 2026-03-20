@@ -26,6 +26,11 @@ app.use(express.json({ limit: '10mb' }));
 app.use('/api/', limiter);
 
 // Routes
+app.use("/",(req,res)=>{
+  res.json({
+    message: "Welcome to the Backend"
+  })
+})
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/skills', require('./routes/skills'));
 app.use('/api/contact', require('./routes/contact'));
